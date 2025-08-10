@@ -1,0 +1,21 @@
+#heading {
+    color : Blue;
+    background-color: yellow;
+}
+
+body {
+    background-color: pink;
+}
+
+button {
+    background-color: blue;
+    color : white;
+}
+
+.headingbyclass {
+    background-color: aqua;
+}
+
+.parabyclass {
+    background-color: aquamarine;
+}
