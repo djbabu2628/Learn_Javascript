@@ -1,11 +1,5 @@
 class Fortuner {
-
-    constructor(brand, mileage){
-        console.log("Creating New Object");
-        this.brand = brand;
-        this.mileage = mileage;
-    }
-
+    
     start() {
         console.log("Start");
     }
@@ -16,7 +10,9 @@ class Fortuner {
 }   
 
 
-let car = new Fortuner("Toyota", 20);
-console.log(car);
-let lexus = new Fortuner("Lexus", 12);
-console.log(lexus);
+let car = new Fortuner();
+console.log(car.start());
+console.log(car.stop());
+let lexus = new Fortuner();
+console.log(car.start());
+console.log(car.stop());
