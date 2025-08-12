@@ -7,3 +7,17 @@ function calculator(a,b,mul) {
 }
 
 calculator(3,5,mul);
+
+//Nesting 
+
+let age = 18;
+if(age>=18){
+    if (age>=60){
+        console.log("Senior");
+    }
+    else{
+        console.log("middle");
+    }
+} else {
+    console.log("Child");
+}
