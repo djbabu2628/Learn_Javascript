@@ -8,6 +8,9 @@ function api(data){
     });
 };
 
+//IIFE = Immediately Invoked Function Expression
+
+
 (async function (){
     await api(2);
     await api(3);
