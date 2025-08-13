@@ -8,7 +8,7 @@ function api(data){
     });
 };
 
-async function getData(){
+(async function (){
     await api(2);
     await api(3);
     await api(1);
@@ -17,4 +17,4 @@ async function getData(){
     await api(7);
     await api(9);
     await api(8);
-}
+})();
