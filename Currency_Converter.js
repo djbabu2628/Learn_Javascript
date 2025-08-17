@@ -50,7 +50,7 @@ const updateFlag = (element)=>{
     img.src = newSrc;
 }
 
-btn.addEventListener("click", async (evt)=>{
+btn.addEventListener("click", (evt)=>{
     evt.preventDefault();
     updateExchangeRate();
 });
