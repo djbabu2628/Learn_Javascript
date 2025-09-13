@@ -1,4 +1,4 @@
-const BASE_URL = "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies";
+const BASE_URL = "https://woxy-sensei.github.io/currency-api/";
 
 const dropdowns = document.querySelectorAll(".dropdown select");
 const btn = document.querySelector("form button");
@@ -28,15 +28,16 @@ select.addEventListener("change", (evt)=>{
 const updateExchangeRate = async ()=>{
     let amount = document.querySelector(".amount input");
     let amtVal = parseFloat(amount.value);
-    if (amtVal === "" || amtVal < 1){
+    if (isNaN(amtVal) || amtVal < 1){
         amtVal = 1;
         amount.value = "1";
     }
 
-    const URL = `https://api.exchangerate.host/convert?from=${fromCurr.value}&to=${toCurr.value}&amount=${amtVal}`;
+    // const URL = `https://api.exchangerate.host/convert?from=${fromCurr.value}&to=${toCurr.value}&amount=${amtVal}`
+    const URL =`https://raw.githubusercontent.com/WoXy-Sensei/currency-api/main/api/${fromCurr.value}_${toCurr.value}.json`;
     let response = await fetch(URL);
     let data = await response.json();
-    let rate = data[toCurr.value.toLowerCase()];
+    let rate = data.rate;//[fromCurr.value.toLowerCase()][toCurr.value.toLowerCase()];
 
     let finalAmount = amtVal * rate;
     msg.innerText = `${amtVal} ${fromCurr.value} = ${finalAmount} ${toCurr.value}`;
@@ -59,3 +60,4 @@ btn.addEventListener("click", (evt)=>{
 window.addEventListener("load", ()=>{
     updateExchangeRate();
 })
+
